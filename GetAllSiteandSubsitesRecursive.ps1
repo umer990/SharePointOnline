@@ -168,9 +168,7 @@ $adminUserName=Read-Host -Prompt "Admin username"
 #>
 $passie=Read-Host -Prompt "Password" -AsSecureString
 $adminUrelek="https://myownsoftronic-admin.sharepoint.com/"
-#$adminUrelek="https://softronic2-admin.sharepoint.com"
 $adminUserName="umer@myownsoftronic.onmicrosoft.com"
-#$adminUserName="umer.malik.khan@softronic.se"
 Connect-SPOService -Url $adminUrelek -Credential $adminUserName
 $sites=(Get-SPOSite -Limit ALL).Url
 $webs=Get-SPOWeb -Username $adminUrelek -AdminPassword $passie -Url adminUrelek -IncludeSubsites $true | select url
